@@ -71,7 +71,9 @@ function FilterDropdown({ value, field, options, placeholder, stateFilterOptions
             containsSearchQuery(option.loclName, input)
           );
           if (isInName) return true;
+          // @ts-ignore
           if (!option?.aliases) return false;
+          // @ts-ignore
           return option.aliases.some(alias => containsSearchQuery(alias, input));
         });
         if (filtered.length === 0) return [];

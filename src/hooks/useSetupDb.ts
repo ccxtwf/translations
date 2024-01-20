@@ -47,6 +47,7 @@ export default function useSetupDb() {
         await ds.initialize();
 
         // Database Regex Function
+        // @ts-ignore
         ds.driver.databaseConnection.create_function("MATCHES", (t: string, pattern: string) => {
           t = t || '';
           t = t.normalize("NFD").replace(/[\u0300-\u036f]/g, "");

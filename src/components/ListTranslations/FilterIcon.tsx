@@ -17,6 +17,7 @@ function FilterIcon({ field, filterOptions, setFilterOptions }: FilterIconProps)
   
   return (
     <Icon 
+      // @ts-ignore
       name={drawIcon}
       className={isActive ? 'active-filter' : ''}
       onClick={() => {
