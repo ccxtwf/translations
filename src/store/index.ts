@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import datasourceReducer from "./reducers/datasourceReducer";
 import synthsReducer from "./reducers/synthsReducer";
 import vocalistsReducer from "./reducers/vocalistsReducer";
 import producersReducer from "./reducers/producersReducer";
@@ -31,7 +30,6 @@ import {
 
 const store = configureStore({
   reducer: {
-    datasource: datasourceReducer,
     synths: synthsReducer,
     vocalists: vocalistsReducer,
     producers: producersReducer,

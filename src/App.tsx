@@ -2,7 +2,7 @@ import "reflect-metadata";
 
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import useSetupDb from "./hooks/useSetupDb";
+import { useAppDataSource } from "./components/DatabaseProvider";
 import { 
   fetchSynths, fetchVocalists, fetchProducers, fetchCircles, fetchSongs, searchSongs
 } from "./store/actions/fetchActions";
@@ -16,7 +16,7 @@ import ListTranslations from "./components/ListTranslations/ListTranslations";
 function App() {
 
   const dispatch = useDispatch<ThunkActionDispatch<any>>();
-  const { dataSource } = useSetupDb();
+  const dataSource = useAppDataSource();
 
   const [ filterOptions, setFilterOptions ] = useState<FilterSongOptions>({
     lang: null,

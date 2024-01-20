@@ -2,11 +2,11 @@
   "name": "app",
   "private": false,
   "version": "0.0.0",
-  "homepage": "https://ccxtwf.github.io/translations",
+  "homepage": "https://ccxtwf.github.io/translations/",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build -- --base \"translations/\"",
     "deploy": "gh-pages -d dist",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",

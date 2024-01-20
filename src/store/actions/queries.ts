@@ -5,6 +5,10 @@ import * as entity from "../../entity";
 import { FilterSongOptions } from "../../components/types";
 import { SelectQueryBuilder } from "typeorm/browser";
 
+import { Buffer } from 'buffer';
+// @ts-ignore
+window.Buffer = Buffer;
+
 function filterSongsWithSelectedOptions(qb: SelectQueryBuilder<any>, options: FilterSongOptions): void {
   if (options.synths && options.synths.length > 0) {
     qb.andWhere(
