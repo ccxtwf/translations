@@ -1,0 +1,95 @@
+header {
+  margin: 20px 10px 40px 10px;
+}
+
+main {
+  margin-left: 12vw;
+  margin-right: 12vw;
+}
+
+#main-article {
+  margin-top: 20px;
+}
+
+#main-article table {
+  max-width: 100%;
+  width: 100%
+}
+
+.search-bar > .ui.input {
+  width: 100%;
+}
+
+.filter-submenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+.filter-submenu > * {
+  padding-bottom: 15px;
+}
+.filter-submenu .lang-dropdown {
+  min-width: 10% !important;
+  max-width: 100% !important;
+}
+.filter-submenu .menu.transition > .header {
+  white-space: initial !important;
+}
+
+.flex-middle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.flex-middle > *:first-child {
+  margin-right: 5px;
+}
+
+.table-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-footer-info-songs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.engine-label {
+  padding: 2px 4px !important;
+  border-radius: 10px;
+  margin-right: 4px !important;
+}
+
+.active-filter {
+  color: #4ad93b;
+}
+
+.circle-element {
+  font-weight: bold;
+}
+
+.lang-tag {
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+@media only screen and (max-width: 767px) {
+  td.center.aligned {
+    text-align: left !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
