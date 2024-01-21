@@ -259,7 +259,6 @@ export const searchSongs:
     dispatch(searchSongsLoading(true));
     try {
       const songs = await querySearchSongs(dataSource, query);
-      console.log(songs);
       dispatch(searchSongsSuccess(songs));
     } catch(err) {
       dispatch(searchSongsFailure());

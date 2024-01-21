@@ -39,8 +39,10 @@ function SearchSong({ showEnglish, dispatchSearchSongs, stateFilterOptions }: Se
       fluid
       placeholder='Search...'
       onSearchChange={(_, data) => {
-        console.log("Changing search query", data.value);
         dispatchSearchSongs(data.value);
+      }}
+      onResultSelect={(_, data) => {
+        dispatchSearchSongs(data?.result?.title);
       }}
       results={songs.slice(0, 5).map((song: Song) => {
         let title; let description;

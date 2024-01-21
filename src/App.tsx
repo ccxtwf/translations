@@ -83,9 +83,12 @@ function App() {
       </article>
 
     </main>
-    
+
     <footer>
-      This is a footer.
+      <hr />
+      <div>
+        Powered by React and <a href="https://semantic-ui.com/" target="_blank">Semantic UI</a>.
+      </div>
     </footer>
     </>
   )

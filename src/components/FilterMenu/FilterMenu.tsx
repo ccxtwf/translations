@@ -33,6 +33,7 @@ function FilterMenu({
           let val = data.value || null;
           setFilterOptions({
             ...filterOptions,
+            page: 1,
             lang: val
           });
         }}

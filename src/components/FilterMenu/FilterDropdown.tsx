@@ -55,7 +55,7 @@ function FilterDropdown({ value, field, options, placeholder, stateFilterOptions
       onChange={(_, data) => {
         let filterIds: number[] | null = (data.value as any[])?.slice() || null; 
         if (filterIds && filterIds.length === 0) filterIds = null;
-        console.log(filterIds);
+        // console.log(filterIds);
         setFilterOptions({
           ...filterOptions,
           page: 1,

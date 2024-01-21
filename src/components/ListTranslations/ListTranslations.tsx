@@ -13,7 +13,7 @@ import CircleCreditElement from "./CircleCreditElement";
 import SubLink from "./SubLink";
 import FilterIcon from "./FilterIcon";
 
-import { ListTranslationsProps, SingerEntity, ProducerEntity } from "../types";
+import { ListTranslationsProps, SingerEntity, ProducerEntity, CircleEntity } from "../types";
 
 const splitSingers = (list: any[]): any[][] => {
   const hmap: any = {};
@@ -84,6 +84,38 @@ const renderCommaListForProducers = (list: ProducerEntity[], showEnglish: boolea
       }
       {"and "}
       <ProducerCreditElement producer={list[n-1]} showEnglish={showEnglish} />
+      </>
+    ) 
+  }
+}
+
+const renderCommaListForCircles = (list: CircleEntity[], showEnglish: boolean) => {
+  const n = list.length;
+  if (n === 1) {
+    return (
+      <CircleCreditElement circle={list[0]} showEnglish={showEnglish} />
+    )
+  } else if (n === 2) {
+    return (
+      <>
+        <CircleCreditElement circle={list[0]} showEnglish={showEnglish} />
+        {" and "}
+        <CircleCreditElement circle={list[1]} showEnglish={showEnglish} />
+      </>
+    )
+  } else {
+    return (
+      <>
+      {
+        list.map((el: CircleEntity, idx: number) => (
+          idx === n-1 ? null :
+          <>
+          <CircleCreditElement circle={el} showEnglish={showEnglish} />{", "}
+          </>
+        ))
+      }
+      {"and "}
+      <CircleCreditElement circle={list[n-1]} showEnglish={showEnglish} />
       </>
     ) 
   }
@@ -183,12 +215,7 @@ function ListTranslations(
                 song.circles.length === 0 ? null :
                 <div>
                 {
-                  song.circles.map((el) => (
-                    <CircleCreditElement 
-                      circle={el} 
-                      showEnglish={showEnglish} 
-                    />
-                  ))
+                  renderCommaListForCircles(song.circles, showEnglish)
                 }{":"}
                 </div>
               }

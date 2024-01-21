@@ -55,6 +55,12 @@ export interface ProducerEntity {
   }
 }
 
+export interface CircleEntity {
+  id: number
+  origName: string
+  loclName: string | null
+}
+
 export interface ArtistCreditElementProps {
   artist: SingerEntity
   showEnglish: boolean
@@ -66,11 +72,7 @@ export interface ProducerCreditElementProps {
 }
 
 export interface CircleCreditElementProps {
-  circle: {
-    id: number
-    origName: string
-    loclName: string | null
-  }
+  circle: CircleEntity
   showEnglish: boolean
 }
 
