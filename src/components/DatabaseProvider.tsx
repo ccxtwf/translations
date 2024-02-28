@@ -15,6 +15,8 @@ import wasm from "sql.js/dist/sql-wasm.wasm?url";
 
 import dbUrl from "../assets/tl.db?url";
 
+import { Dimmer, Loader } from "semantic-ui-react";
+
 interface DatabaseContextProps {
   AppDataSource: DataSource;
 }
@@ -62,6 +64,15 @@ export const DatabaseProvider: FunctionComponent<PropsWithChildren> = ({
     console.log("Initialized DB connection");
     return AppDataSource;
   }, []);
+
+  
+  if (loading) {
+    return (
+      <Dimmer active>
+        <Loader>Loading</Loader>
+      </Dimmer>
+    )
+  }
 
   return (
     <DatabaseContext.Provider
