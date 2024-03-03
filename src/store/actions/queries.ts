@@ -159,7 +159,7 @@ export function querySongs(dataSource: DataSource, options: FilterSongOptions): 
       break;
     case 'song_translated_date':
     default:
-      (sortByField as string) = 'DATE("song_translated_date")';
+      (sortByField as string) = 'DATETIME("song_translated_date")';
   }
   let sortOrder = sortByField ? (options.sort?.order || 'ASC') : 'DESC';
 
