@@ -13,9 +13,11 @@ function SubLink({ sub }: { sub: Sub }) {
     }
   }
   return (
-    <a href={url} target="_blank">
-      {`[${text}]`}
-    </a>
+    <div>
+      <a href={url} target="_blank">
+        {`[${text}]`}
+      </a>
+    </div>
   )
 }
 

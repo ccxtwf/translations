@@ -2,7 +2,7 @@ import { Icon } from "semantic-ui-react";
 
 import { FilterIconProps } from "../types";
 
-function FilterIcon({ field, filterOptions, setFilterOptions }: FilterIconProps) {
+function FilterableTableHeader({ field, label, filterOptions, setFilterOptions }: FilterIconProps) {
   const sortedField = filterOptions.sort?.field || null;
   const sortedOrder = filterOptions.sort?.order || null;
   
@@ -16,10 +16,8 @@ function FilterIcon({ field, filterOptions, setFilterOptions }: FilterIconProps)
   }
   
   return (
-    <Icon 
-      // @ts-ignore
-      name={drawIcon}
-      className={isActive ? 'active-filter' : ''}
+    <div 
+      className="filterable-column"
       onClick={() => {
         setFilterOptions({
           ...filterOptions,
@@ -30,8 +28,17 @@ function FilterIcon({ field, filterOptions, setFilterOptions }: FilterIconProps)
           }
         })
       }}
-    />
+    >
+      <span>
+        {label}
+      </span>
+      <Icon 
+        // @ts-ignore
+        name={drawIcon}
+        className={isActive ? 'active-filter' : ''}
+      />
+    </div>
   )
 }
   
-export default FilterIcon;
+export default FilterableTableHeader;

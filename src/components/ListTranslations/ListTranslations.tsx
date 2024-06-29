@@ -11,7 +11,7 @@ import ArtistCreditElement from './ArtistCreditElement';
 import ProducerCreditElement from './ProducerCreditElement';
 import CircleCreditElement from "./CircleCreditElement";
 import SubLink from "./SubLink";
-import FilterIcon from "./FilterIcon";
+import FilterableTableHeader from "./FilterableTableHeader";
 
 import { ListTranslationsProps, SingerEntity, ProducerEntity, CircleEntity } from "../types";
 
@@ -135,16 +135,16 @@ function ListTranslations(
     <TableHeader>
       <TableRow>
         <TableHeaderCell collapsing width={1}>
-          No 
-          <FilterIcon 
+          <FilterableTableHeader 
+            label="No"
             field='song_translated_date' 
             filterOptions={filterOptions} 
             setFilterOptions={setFilterOptions} 
           />
         </TableHeaderCell>
         <TableHeaderCell width={showSubs ? 5 : 7}>
-          Title
-          <FilterIcon 
+          <FilterableTableHeader 
+            label="Title"
             field={showEnglish ? 'song_english_title' : 'song_romanized_title'}
             filterOptions={filterOptions} 
             setFilterOptions={setFilterOptions} 
@@ -157,11 +157,11 @@ function ListTranslations(
           Producers
         </TableHeaderCell>
         <TableHeaderCell width={1}>
-          Tags
+          Language
         </TableHeaderCell>
         <TableHeaderCell width={1}>
-          Song Release Year
-          <FilterIcon 
+          <FilterableTableHeader 
+            label="Song Release Year"
             field='song_released_date' 
             filterOptions={filterOptions} 
             setFilterOptions={setFilterOptions} 

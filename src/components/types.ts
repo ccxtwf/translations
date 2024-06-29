@@ -86,6 +86,7 @@ export interface TitleLinkProps {
 
 export interface FilterIconProps {
   field: string
+  label: string
   filterOptions: FilterSongOptions
   setFilterOptions: CallableFunction
 }
