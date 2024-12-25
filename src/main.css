@@ -1,5 +1,53 @@
+:root, body {
+  background-color: #fafaf9;
+  font-family: 'Lora', 'Times New Roman', Times, serif;
+  font-weight: 200;
+}
+
+.arvo-regular {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.arvo-bold {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.arvo-regular-italic {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.arvo-bold-italic {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+.lora-400 {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 header {
   margin: 20px 10px 40px 10px;
+}
+
+header div.ui.header {
+  font-family: 'Arvo', 'Times New Roman', Times, serif;
+  font-weight: 400;
+  color: #2D8F8D;
+}
+
+a, .ui.breadcrumb a {
+  color: #2D8F8D;
+}
+
+a:hover, .ui.breadcrumb a:hover {
+  color: #1a605f;
 }
 
 footer {
@@ -37,11 +85,19 @@ main {
   padding-bottom: 15px;
 }
 .filter-submenu .lang-dropdown {
-  min-width: 10% !important;
-  max-width: 100% !important;
+  width: 98%;
 }
 .filter-submenu .menu.transition > .header {
   white-space: initial !important;
+}
+.ui.input > input {
+  background: #fafaf9;
+}
+.ui.selection.dropdown {
+  background-color: #fafaf9;
+}
+.ui.dropdown menu {
+  background-color: #fafaf9;
 }
 
 .flex-middle {
@@ -52,6 +108,19 @@ main {
 }
 .flex-middle > *:first-child {
   margin-right: 5px;
+}
+
+.ui.table.list-tl {
+  background-color: #fafaf9;
+}
+.ui.table.list-tl thead th {
+  background-color: #eff0ea;
+  color: rgb(28 55 4);
+  font-family: 'Arvo', 'Times New Roman', Times, serif;
+  font-weight: 400;
+}
+.ui.table.list-tl tfoot th {
+  background-color: #fcfcfb;
 }
 
 .table-footer {
@@ -66,6 +135,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  font-family: 'Arvo', 'Times New Roman', Times, serif;
 }
 
 .engine-label {
@@ -95,11 +165,94 @@ main {
   td.center.aligned {
     text-align: left !important;
   }
+  .ui.table:not(.unstackable) thead th:first-child {
+    display: none !important;
+  }
+  .ui.table:not(.unstackable) thead th {
+    margin-left: 40px !important;
+  }
+  .ui.table:not(.unstackable) tbody tr {
+    vertical-align: top;
+  }
+  .ui.table:not(.unstackable) td {
+    margin-left: 40px !important;
+  }
+  .ui.table:not(.unstackable) td:first-child {
+    display: inline-block !important;
+    width: 30px !important;
+    margin-left: 10px !important;
+    float: inline-start;
+  }
+  /* .ui.table:not(.unstackable) td:nth-child(2) {
+    display: inline-block !important;
+    margin-left: 0px !important;
+  } */
+  .table-footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .table-footer-info-songs {
+    margin-bottom: 10px;
+    font-weight: 400 !important;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   main {
     margin-left: 20px;
     margin-right: 20px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root, body {
+    background-color: #011516;
+    color: #dcdcc7;
+  }
+  header div.ui.header {
+    color: #dcdcc7;
+  }
+  .ui.table.list-tl {
+    background-color: #022627;
+    color: #bcbcb6;
+  }
+  .ui.table.list-tl thead th, .ui.table.list-tl tbody td {
+    border-color: #fcfcfb2e;
+  }
+  .ui.table.list-tl thead tr, .ui.table.list-tl thead th {
+    background-color: #073c3d;
+    color: #fcfcfb;
+  }
+  .ui.table.list-tl tfoot th {
+    background-color: #073c3d;
+    color: #dcdcc7;
+  }
+  .table-footer .ui.menu {
+    background-color: #022627;
+    border: solid 1px #dcdcc7a2;
+  }
+  .table-footer .ui.menu .item {
+    color: #dcdcc7;
+    border-left: solid 1px #dcdcc730;
+    border-right: solid 1px #dcdcc730;
+  }
+  .table-footer .ui.menu .active.item, .table-footer .ui.menu .item:hover {
+    color: #fcfcfb;
+  }
+  .table-footer .ui.menu .active.item {
+    background-color: #0a393d;
+  }
+  a, .ui.breadcrumb a {
+    color: #dcdcc7;
+  }
+  a:hover, .ui.breadcrumb a:hover {
+    color: #fcfcfb;
+  }
+  .credit-popup {
+    background-color: #022627 !important;
+    color: #dcdcc7 !important;
+  }
+  .credit-popup::before {
+    background-color: #022627 !important;
   }
 }

@@ -16,6 +16,7 @@ function ProducerCreditElement({ producer, showEnglish }: ProducerCreditElementP
   strAlias = `${lAlias}${(lAlias === '' || rAlias === '') ? '' : ', '}${rAlias}`;
   return (
     <Popup
+      className='credit-popup'
       trigger={parent}
       content={(
         <div>

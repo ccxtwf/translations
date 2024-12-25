@@ -131,7 +131,7 @@ function ListTranslations(
   return (
   <>
   <span ref={ref}></span>
-  <Table celled striped color='teal' compact>
+  <Table celled striped color='teal' compact className="list-tl">
     <TableHeader>
       <TableRow>
         <TableHeaderCell collapsing width={1}>

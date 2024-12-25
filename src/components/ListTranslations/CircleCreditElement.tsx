@@ -15,6 +15,7 @@ function CircleCreditElement({ circle, showEnglish }: CircleCreditElementProps) 
   if (strAlias === '') return parent;
   return (
     <Popup
+      className='credit-popup'
       trigger={parent}
       content={<div>{strAlias}</div>}
       position='bottom left'

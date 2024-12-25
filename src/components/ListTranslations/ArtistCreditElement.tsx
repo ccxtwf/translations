@@ -31,6 +31,7 @@ function ArtistCreditElement({ artist, showEnglish }: ArtistCreditElementProps) 
   }
   return (
     <Popup
+      className='credit-popup'
       trigger={parent}
       content={title}
       position='bottom left'
