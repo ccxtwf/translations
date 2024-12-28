@@ -156,10 +156,10 @@ function ListTranslations(
         <TableHeaderCell width={3}>
           Producers
         </TableHeaderCell>
-        <TableHeaderCell width={1}>
+        <TableHeaderCell width={1} className="lang-cell">
           Language
         </TableHeaderCell>
-        <TableHeaderCell width={1}>
+        <TableHeaderCell width={1} className="release-year-cell">
           <FilterableTableHeader 
             label="Song Release Year"
             field='song_released_date' 
@@ -224,13 +224,13 @@ function ListTranslations(
               }
             </TableCell>
 
-            <TableCell textAlign="center">
+            <TableCell textAlign="center" className="lang-cell">
               <div className="lang-tag">
                 {song.lang}
               </div>
             </TableCell>
 
-            <TableCell textAlign="center">
+            <TableCell textAlign="center" className="release-year-cell">
               {(new Date(song.releasedDate).getFullYear())}
             </TableCell>
 

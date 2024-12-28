@@ -113,7 +113,7 @@ main {
 .ui.table.list-tl {
   background-color: #fafaf9;
 }
-.ui.table.list-tl thead th {
+.ui.table.list-tl thead tr, .ui.table.list-tl thead th {
   background-color: #eff0ea;
   color: rgb(28 55 4);
   font-family: 'Arvo', 'Times New Roman', Times, serif;
@@ -187,6 +187,22 @@ main {
     display: inline-block !important;
     margin-left: 0px !important;
   } */
+  .ui.table.list-tl tbody td h3 {
+    margin-bottom: 3px;
+  }
+  .ui.table.list-tl thead th.lang-cell, .ui.table.list-tl tbody td.lang-cell {
+    display: inline-block !important;
+    padding-right: 0px !important;
+  }
+  .ui.table.list-tl thead th.release-year-cell, .ui.table.list-tl tbody td.release-year-cell {
+    display: inline-block !important;
+    padding-left: 0px !important;
+    margin-left: 5px !important;
+  }
+  .ui.table.list-tl thead th.release-year-cell::before, .ui.table.list-tl tbody td.release-year-cell::before {
+    content: "/";
+    margin-right: 5px;
+  }
   .table-footer {
     padding-top: 20px;
     padding-bottom: 20px;
