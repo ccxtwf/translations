@@ -11,6 +11,7 @@ import { FilterSongOptions } from "./components/types";
 
 import HeaderComponent from './components/HeaderComponent';
 import FilterMenu from "./components/FilterMenu/FilterMenu";
+import SortLabel from "./components/SortLabel";
 import ListTranslations from "./components/ListTranslations/ListTranslations";
 
 function App() {
@@ -69,6 +70,10 @@ function App() {
           stateShowEnglish={[showEnglish, setShowEnglish]}
           stateShowSubs={[showSubs, setShowSubs]}
           dispatchSearchSongs={dispatchSearchSongs}
+        />
+        <SortLabel 
+          filterOptions={filterOptions} 
+          setFilterOptions={setFilterOptions} 
         />
       </article>
 

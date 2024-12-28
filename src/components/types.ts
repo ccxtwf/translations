@@ -116,3 +116,8 @@ export interface FilterMenuProps {
   stateShowSubs: [boolean, CallableFunction]
   dispatchSearchSongs: CallableFunction
 }
+
+export interface SortLabelProps {
+  filterOptions: FilterSongOptions
+  setFilterOptions: CallableFunction
+}
