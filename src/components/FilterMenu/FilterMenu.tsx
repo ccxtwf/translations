@@ -64,7 +64,8 @@ function FilterMenu({
               options={[
                 { key: 0, text: 'Default - All languages', value: 0 },
                 { key: 1, text: 'Chinese', value: 'CN' },
-                { key: 2, text: 'Japanese', value: 'JP' }
+                { key: 2, text: 'Japanese', value: 'JP' },
+                { key: 3, text: 'Bilingual Chinese & Japanese', value: 'CN-JP' }
               ]}
               onChange={(_, data) => {
                 let val = data.value || null;

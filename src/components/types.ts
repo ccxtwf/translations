@@ -1,7 +1,7 @@
 import { Song, SynthWithCount, ProducerWithCount, CircleWithCount } from "../entity";
 
 export interface FilterSongOptions {
-  lang: "CN" | "JP" | null
+  lang: "CN" | "JP" | "CN-JP" |null
   ids: number[] | null
   synths: number[] | null
   producers: number[] | null

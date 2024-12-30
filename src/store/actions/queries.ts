@@ -136,7 +136,8 @@ export function querySongs(dataSource: DataSource, options: FilterSongOptions): 
     .leftJoinAndSelect('song.circles', 'circle')
     .leftJoinAndSelect('song.subs', 'sub')
     // initialize filtering
-    .where(options.lang ? `song.lang=:lang` : 'TRUE', { lang: options.lang });
+    .where(options.lang ? `song.lang=:lang` : 'TRUE', { lang: options.lang })
+    .orWhere(`song.lang='CN-JP'`);
 
   if (options.ids) {
     qbSongs.andWhere(`"song"."id" IN (${options.ids})`);
