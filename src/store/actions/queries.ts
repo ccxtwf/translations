@@ -134,13 +134,15 @@ export function querySongs(dataSource: DataSource, options: FilterSongOptions): 
     .leftJoinAndSelect('song.producers', 'producer')
     .leftJoinAndSelect('producer.__props', 'jnProducer')
     .leftJoinAndSelect('song.circles', 'circle')
-    .leftJoinAndSelect('song.subs', 'sub')
-    // initialize filtering
-    .where(options.lang ? `song.lang=:lang` : 'TRUE', { lang: options.lang })
-    .orWhere(`song.lang='CN-JP'`);
-
+    .leftJoinAndSelect('song.subs', 'sub');
+  if (options.lang) {
+    qbSongs.where(`(song.lang=:lang1 OR song.lang=:lang2)`, 
+      { lang1: options.lang, lang2: 'CN-JP' });
+  } else {
+    qbSongs.where('TRUE');
+  }
   if (options.ids) {
-    qbSongs.andWhere(`"song"."id" IN (${options.ids})`);
+    qbSongs.andWhereInIds(options.ids);
   } else {
     filterSongsWithSelectedOptions(qbSongs, options);
   }
@@ -170,7 +172,7 @@ export function querySongs(dataSource: DataSource, options: FilterSongOptions): 
     .take(NUMBER_OF_SONGS_PER_PAGE)
     .skip(((options.page || 1) - 1) * NUMBER_OF_SONGS_PER_PAGE);
 
-  // console.log(qbSongs.getSql());
+  console.log(qbSongs.getSql());
   return qbSongs.getManyAndCount();
   
 }
@@ -186,6 +188,6 @@ export function querySearchSongs(dataSource: DataSource, query: string): Promise
     .orWhere(`MATCHES(song_romanized_title, :query)`)
     .orWhere(`MATCHES(song_english_title, :query)`)
     .setParameter('query', query);
-  // console.log(qbSongs.getSql());
+  console.log(qbSongs.getSql());
   return qbSongs.getMany();
 }
